@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, StyleSheet, ScrollView ,Image, TextInput, TouchableHighligh} from 'react-native';
+import { View, Text, StyleSheet, ScrollView ,Image, TextInput, TouchableHighligh,TouchableOpacity} from 'react-native';
 const TouchableHighlight = ()=>{
   const [count ,setCount] = useState(0)
   const onPress = () =>setCount(count + 1)
@@ -9,15 +9,18 @@ const TouchableHighlight = ()=>{
 const App = () => {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Hello , Devs</Text>
+      <Text style={styles.title}>Hello , Devs
+      </Text>
       <Text style={styles.alert}>15 tasks today</Text>
       <View style={styles.section}> 
 
       <TextInput style={styles.Input}
       placeholder=' Search here...'
+      placeholderTextColor="#666"
       underlineColorAndroid="transparent"
       
       />  
+        
       </View>
 
       <View style={styles.section}>
@@ -28,35 +31,49 @@ const App = () => {
         <Text style={styles.heading}>Categories</Text>
         <View style={styles.categoryContainer}>
           <Text style={styles.categoryItem1}>Exercise  :
-          <Text style={styles.categoryItem}> Task 8
-          <Image source ={require('./assets/favicon.png')}/>
-          </Text>
-            
+          <Text style={styles.categoryItem}> Task 8 </Text>
+          <Image  style={styles.exx}  source ={require('./assets/images.jpg')}/>
+
           </Text>
           
           <Text style={styles.categoryItem2}>Study  :
           <Text style={styles.categoryItem}> Task 7</Text>
+          <Image source ={require('./assets/favicon.png')}/>
+
           </Text>
           <Text style={styles.categoryItem1}>Code  :
           <Text style={styles.categoryItem}> Task 6</Text>
+          <Image source ={require('./assets/coding.jpg')}/>
           </Text>
           <Text style={styles.categoryItem2}>cook :
           <Text style={styles.categoryItem}> Task 5</Text>
+          <Image source ={require('./assets/favicon.png')}/>
           </Text>
           <Text style={styles.categoryItem1}>Hacking  :
           <Text style={styles.categoryItem}> Task 4</Text>
+          <Image source ={require('./assets/hac.jpg')}/>
+
           </Text>
           <Text style={styles.categoryItem2}>Teaching  :
           <Text style={styles.categoryItem}> Task 3</Text>
+          <Image source ={require('./assets/teach.jpg')}/>
+
           </Text>
           <Text style={styles.categoryItem1}>Playing  :
           <Text style={styles.categoryItem}> Task 2</Text>
+          <Image source ={require('./assets/download.jpg')}/>
+
           </Text>
           <Text style={styles.categoryItem2}>Dancing  :
           <Text style={styles.categoryItem}> Task 1</Text>
+          <Image source ={require('./assets/danc.jpg')}/>
+
           </Text>
+          
           <Text style={styles.heading}>Ongoing Tasks</Text>
+          
         </View>
+        
         <Text style={styles.categoryItem3}>Mobile App Development</Text>
         <Text style={styles.categoryItem3}>Web Development</Text>
         <Text style={styles.categoryItem3}>UX/UI Designing</Text>
@@ -72,6 +89,10 @@ const App = () => {
         <Text style={styles.categoryItem3}>Presentation</Text>
         <Text style={styles.categoryItem3}>CTF challenge</Text>
         <Text style={styles.categoryItem3}>Manifesto</Text>
+        <Text style={styles.categoryItem3}>CTF challenge</Text>
+        <Text style={styles.categoryItem3}>Manifesto</Text>
+
+        
       </View>
     </ScrollView>
   );
@@ -89,6 +110,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
     paddingTop : 30,
+    
 
   },
   section: {
@@ -117,10 +139,12 @@ paddingBottom: 20,
     paddingHorizontal: 10,
     borderRadius: 7,
     marginRight: 10,
-    marginBottom: 10,
+    marginBottom: 30,
     width: 162,
-    height: 190,fontSize: 16,
-    fontWeight : 'bold'
+    height: 180,fontSize: 16,
+    fontWeight : 'bold',
+    paddingRight: 10,
+    borderColor: 'black',
     
     
   },
@@ -149,8 +173,35 @@ categoryItem3: {
   paddingTop: 25,
   fontWeight : 'bold'
 },
+categoryItem3: {
+  backgroundColor: '#FFFBF6',
+  paddingVertical: 5,
+  paddingHorizontal: 10,
+  borderRadius: 7,
+  marginRight: 10,
+  marginBottom: 20,
+  width: 330,
+  height: 120,
+  fontSize: 20,
+  textAlign: 'center',
+  paddingTop: 25,
+  fontWeight : 'bold'
+},
+categoryItem4: {
+  backgroundColor: '#FFFBF6',
+  paddingVertical: 5,
+  paddingHorizontal: 10,
+  borderRadius: 7,
+  marginRight: 10,
+  marginBottom: 10,
+  width: 240,
+  height: 40,fontSize: 16,
+  fontWeight : 'bold',
+  paddingRight: 10,
+},
 subsection : {
   fontSize: 16,
+
 },
 Input: {
   width: 250,
@@ -162,7 +213,22 @@ Input: {
   borderRadius: 7,
   fontWeight: 'bold',
   fontcolor: 'black',
-}
+},
+logo : {
+  width: 70,
+  height: 60,
+  marginLeft: 280,
+  marginTop: 0,
+  
+},
+exx : {
+  width: 200,
+  height: 200,
+  resizeMode: 'contain',
+  marginBottom: 20,
+  alignItems: 'center',
+ 
+},
   
   
 });
